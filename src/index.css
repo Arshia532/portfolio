@@ -1,111 +1,69 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --font-pixel: "Press Start 2P", monospace; /* headings, buttons, labels */
+  --font-ui: "Pixelify Sans", sans-serif; /* chips, status bar, badges */
+  --font-mono: "JetBrains Mono", monospace; /* body text + code */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* ---------- Base (grey / black) ---------- */
+  --bg: #111113; /* page / editor background */
+  --bg-titlebar: #1c1c1f; /* top title bar */
+  --bg-sidebar: #18181b; /* explorer, code card, quest log, locked card */
+  --bg-tabs: #141416; /* tab strip, tech tags */
+  --bg-raised: #222226; /* chips, links, project cards, command buttons */
+  --bg-ai: #1d1a2b; /* AI card + chat header / input */
+  --bg-ai-open: #2a2340; /* AI card when chat is open, robot box */
+  --bg-ai-panel: #16141f; /* chat panel body */
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --border: #000000; /* chunky borders + black hard shadows */
+  --divider: #26262b; /* breadcrumb / context underline */
+  --locked: #5b4a80; /* dashed border on locked items */
+
+  /* ---------- Text ---------- */
+  --text: #ececf0; /* main text */
+  --text-soft: #c4c4cc; /* body copy, title bar */
+  --text-muted: #9a9aa3; /* labels, inactive tabs, placeholders */
+  --text-on-color: #111113; /* text on filled pastel buttons / badges */
+
+  /* ---------- Vibrant pastels ---------- */
+  --mint: #5cf2b0;
+  --lavender: #b98cff;
+  --blue: #6cbeff;
+  --pink: #ff8fc4;
+  --peach: #ffad7a;
+  --yellow: #ffe45c;
+
+  /* Dark tints behind project screenshots */
+  --mint-tint: #0f2a20;
+  --peach-tint: #2e1c12;
+
+  /* ---------- Accent (swap this one line to re-theme) ---------- */
+  --accent: var(--pink);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+a:hover {
+  color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
