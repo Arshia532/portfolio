@@ -1,0 +1,56 @@
+.editor-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.titlebar {
+  background-color: darkgreen;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.workbench {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.explorer {
+  width: 200px;
+  background-color: red;
+  flex-shrink: 0;
+}
+
+.editor-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tab-bar {
+  height: 30px;
+  background-color: brown;
+  flex-shrink: 0;
+}
+
+.breadcrumb {
+  background-color: aqua;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.page-view {
+  background-color: coral;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.status-bar {
+  height: 25px;
+  background-color: greenyellow;
+  flex-shrink: 0;
+}
+
